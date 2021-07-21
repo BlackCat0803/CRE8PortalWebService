@@ -1,0 +1,346 @@
+################# Start Pioneer Event Tables Created ################# added by shalini  @ 20-11-2017
+CREATE TABLE `pioneerevent.messageheader` (
+  `rowid` int(10) NOT NULL AUTO_INCREMENT,
+  `datetriggered` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `Version` varchar(100) NOT NULL DEFAULT '',
+  `MessageID` varchar(100) NOT NULL DEFAULT '',
+  `SentOnUTC` varchar(100) NOT NULL DEFAULT '',
+  `WorkStation` varchar(100) NOT NULL DEFAULT '',
+  `InitiatingEventID` varchar(100) NOT NULL DEFAULT '',
+  `InitiatingEventText` varchar(100) NOT NULL DEFAULT '',
+  PRIMARY KEY (`rowid`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+alter table `pioneerevent.messageheader` add  `MessageContent` longtext NOT NULL;
+CREATE TABLE `pioneerevent.prescriber` (
+  `rowid` int(10) NOT NULL AUTO_INCREMENT,
+  `datetriggered` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `MessageID` varchar(100) NOT NULL DEFAULT '',
+  `PrescriberPioneerRxID` varchar(100) NOT NULL DEFAULT '',
+  `NPI` varchar(100) NOT NULL DEFAULT '',
+  `DEA` varchar(100) NOT NULL DEFAULT '',
+  `DPS` varchar(100) NOT NULL DEFAULT '',
+  `StateLicense` varchar(100) NOT NULL DEFAULT '',
+  `SerialNumberPerson` varchar(100) NOT NULL DEFAULT '',
+  `FirstName` varchar(100) NOT NULL DEFAULT '',
+  `LastName` varchar(100) NOT NULL DEFAULT '',
+  `MiddleName` varchar(100) NOT NULL DEFAULT '',
+  `Suffix` varchar(100) NOT NULL DEFAULT '',
+  `Prefix` varchar(100) NOT NULL DEFAULT '',
+  `PrimaryPhoneSequenceNumber` varchar(100) NOT NULL DEFAULT '',
+  `Email` varchar(100) NOT NULL DEFAULT '',
+  `PrescriberTypeID` varchar(100) NOT NULL DEFAULT '',
+  `PrescriberTypeText` varchar(100) NOT NULL DEFAULT '',
+  `ClassificationID` varchar(100) NOT NULL DEFAULT '',
+  `ClassificationText` varchar(100) NOT NULL DEFAULT '',
+  `InitiatingEventID` varchar(100) NOT NULL DEFAULT '',
+  `InitiatingEventText` varchar(100) NOT NULL DEFAULT '',
+  `PrimarySpecializationID` varchar(100) NOT NULL DEFAULT '',
+  `PrimarySpecializationText` varchar(100) NOT NULL DEFAULT '',
+  `IsSupervisor` varchar(100) NOT NULL DEFAULT '',
+  `CommentsInformational` varchar(100) NOT NULL DEFAULT '',
+  `CommentsCritical` varchar(100) NOT NULL DEFAULT '',
+  `CommentsPointOfSale` varchar(100) NOT NULL DEFAULT '',
+  `MarketerEmployeePioneerRxID` varchar(100) NOT NULL DEFAULT '',
+  `ChangedOnUTCDateTime` varchar(100) NOT NULL DEFAULT '',
+  PRIMARY KEY (`rowid`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `pioneerevent.prescriberaddress` (
+  `rowid` int(10) NOT NULL AUTO_INCREMENT,
+  `datetriggered` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `MessageID` varchar(100) NOT NULL DEFAULT '',
+  `PrescriberPioneerRxID` varchar(100) NOT NULL DEFAULT '',
+  `SequenceNumber` varchar(100) NOT NULL DEFAULT '',
+  `AddressLine` varchar(100) NOT NULL DEFAULT '',
+  `City` varchar(100) NOT NULL DEFAULT '',
+  `StateCode` varchar(100) NOT NULL DEFAULT '',
+  `ZipCode` varchar(100) NOT NULL DEFAULT '',
+  `Type` varchar(100) NOT NULL DEFAULT '',
+  PRIMARY KEY (`rowid`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `pioneerevent.prescriberphonenumber` (
+  `rowid` int(10) NOT NULL AUTO_INCREMENT,
+  `datetriggered` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `MessageID` varchar(100) NOT NULL DEFAULT '',
+  `PrescriberPioneerRxID` varchar(100) NOT NULL DEFAULT '',
+  `SequenceNumber` varchar(100) NOT NULL DEFAULT '',
+  `AreaCode` varchar(100) NOT NULL DEFAULT '',
+  `Number` varchar(100) NOT NULL DEFAULT '',
+  `Extension` varchar(100) NOT NULL DEFAULT '',
+  `Type` varchar(100) NOT NULL DEFAULT '',
+  PRIMARY KEY (`rowid`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `pioneerevent.patient` (
+  `rowid` int(10) NOT NULL AUTO_INCREMENT,
+  `datetriggered` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `MessageID` varchar(100) NOT NULL DEFAULT '',
+  `PatientPioneerRxID` varchar(100) NOT NULL DEFAULT '',
+  `SSN` varchar(100) NOT NULL DEFAULT '',
+  `DriversLicenseNumber` varchar(100) NOT NULL DEFAULT '',
+  `DriversLicenseStateCode` varchar(100) NOT NULL DEFAULT '',
+  `AlternateID` varchar(100) NOT NULL DEFAULT '',
+  `AlternateIDTypeID` varchar(100) NOT NULL DEFAULT '',
+  `AlternateIDTypeText` varchar(100) NOT NULL DEFAULT '',
+  `ExternalID` varchar(100) NOT NULL DEFAULT '',
+  `CentralKey` varchar(100) NOT NULL DEFAULT '',
+  `SerialNumberPerson` varchar(100) NOT NULL DEFAULT '',
+  `FirstName` varchar(100) NOT NULL DEFAULT '',
+  `LastName` varchar(100) NOT NULL DEFAULT '',
+  `MiddleName` varchar(100) NOT NULL DEFAULT '',
+  `Suffix` varchar(100) NOT NULL DEFAULT '',
+  `Prefix` varchar(100) NOT NULL DEFAULT '',
+  `PrimaryPhoneSequenceNumber` varchar(100) NOT NULL DEFAULT '',
+  `RxNotifyPhoneSequenceNumber` varchar(100) NOT NULL DEFAULT '',
+  `RxNotifyTypeID` varchar(100) NOT NULL DEFAULT '',
+  `RxNotifyTypeText` varchar(100) NOT NULL DEFAULT '',
+  `EZOpenRequested` varchar(100) NOT NULL DEFAULT '',
+  `HasPatientReceivedNopp` varchar(100) NOT NULL DEFAULT '',
+  `HeightInches` varchar(100) NOT NULL DEFAULT '',
+  `WeightOunces` varchar(100) NOT NULL DEFAULT '',
+  `IsAnimal` varchar(100) NOT NULL DEFAULT '',
+  `HipaaStatusTypeID` varchar(100) NOT NULL DEFAULT '',
+  `HipaaStatusTypeText` varchar(100) NOT NULL DEFAULT '',
+  `Email` varchar(100) NOT NULL DEFAULT '',
+  `Gender` varchar(100) NOT NULL DEFAULT '',
+  `LanguageText` varchar(100) NOT NULL DEFAULT '',
+  `LanguageCode` varchar(100) NOT NULL DEFAULT '',
+  `DateOfBirth` varchar(100) NOT NULL DEFAULT '',
+  `AutoFillModeTypeID` varchar(100) NOT NULL DEFAULT '',
+  `AutoFillModeTypeText` varchar(100) NOT NULL DEFAULT '',
+  `DeliveryMethodTypeID` varchar(100) NOT NULL DEFAULT '',
+  `DeliveryMethodText` varchar(100) NOT NULL DEFAULT '',
+  `PatientPrimaryPrescriberPioneerRxID` varchar(100) NOT NULL DEFAULT '',
+  `HeatlhCoachEmployeePioneerRxID` varchar(100) NOT NULL DEFAULT '',
+  `SyncStatusTypeID` varchar(100) NOT NULL DEFAULT '',
+  `SyncStatusTypeText` varchar(100) NOT NULL DEFAULT '',
+  `CallDate` varchar(100) NOT NULL DEFAULT '',
+  `NextPickUpDate` varchar(100) NOT NULL DEFAULT '',
+  `CommentsInformational` varchar(100) NOT NULL DEFAULT '',
+  `CommentsCritical` varchar(100) NOT NULL DEFAULT '',
+  `CommentsPointOfSale` varchar(100) NOT NULL DEFAULT '',
+  `PrimaryCategory` varchar(100) NOT NULL DEFAULT '',
+  `ChangedOnUTC` varchar(100) NOT NULL DEFAULT '',
+  `PatientRiskScore` varchar(100) NOT NULL DEFAULT '',
+  PRIMARY KEY (`rowid`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `pioneerevent.patientaddress` (
+  `rowid` int(10) NOT NULL AUTO_INCREMENT,
+  `datetriggered` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `MessageID` varchar(100) NOT NULL DEFAULT '',
+  `PatientPioneerRxID` varchar(100) NOT NULL DEFAULT '',
+  `SequenceNumber` varchar(100) NOT NULL DEFAULT '',
+  `AddressLine` varchar(100) NOT NULL DEFAULT '',
+  `City` varchar(100) NOT NULL DEFAULT '',
+  `StateCode` varchar(100) NOT NULL DEFAULT '',
+  `ZipCode` varchar(100) NOT NULL DEFAULT '',
+  `Type` varchar(100) NOT NULL DEFAULT '',
+  PRIMARY KEY (`rowid`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `pioneerevent.patientphonenumber` (
+  `rowid` int(10) NOT NULL AUTO_INCREMENT,
+  `datetriggered` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `MessageID` varchar(100) NOT NULL DEFAULT '',
+  `PatientPioneerRxID` varchar(100) NOT NULL DEFAULT '',
+  `SequenceNumber` varchar(100) NOT NULL DEFAULT '',
+  `AreaCode` varchar(100) NOT NULL DEFAULT '',
+  `Number` varchar(100) NOT NULL DEFAULT '',
+  `Extension` varchar(100) NOT NULL DEFAULT '',
+  `Type` varchar(100) NOT NULL DEFAULT '',
+  PRIMARY KEY (`rowid`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `pioneerevent.rx` (
+  `rowid` int(10) NOT NULL AUTO_INCREMENT,
+  `datetriggered` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `MessageID` varchar(100) NOT NULL DEFAULT '',
+  `WrittenByPrescriberPioneerRxID` varchar(100) NOT NULL DEFAULT '',
+  `WrittenBySupervisorPrescriberPioneerRxID` varchar(100) NOT NULL DEFAULT '',
+  `RxNumber` varchar(100) NOT NULL DEFAULT '',
+  `RefillNumber` varchar(100) NOT NULL DEFAULT '',
+  `RxPioneerRxID` varchar(100) NOT NULL DEFAULT '',
+  `RxFillTransactionPioneerRxID` varchar(100) NOT NULL DEFAULT '',
+  `ScriptType` varchar(100) NOT NULL DEFAULT '',
+  `PreviousRxNumber` varchar(100) NOT NULL DEFAULT '',
+  `PrescriberOrderNumber` varchar(100) NOT NULL DEFAULT '',
+  `CurrentRxStatusID` varchar(100) NOT NULL DEFAULT '',
+  `CurrentRxStatusText` varchar(100) NOT NULL DEFAULT '',
+  `RxStatusChangeOnUTC` varchar(100) NOT NULL DEFAULT '',
+  `CurrentRxTransactionStatusID` varchar(100) NOT NULL DEFAULT '',
+  `CurrentRxTransactionStatusText` varchar(100) NOT NULL DEFAULT '',
+  `RxTransactionStatusChangeOnUTC` varchar(100) NOT NULL DEFAULT '',
+  `PreviousDateFilled` varchar(100) NOT NULL DEFAULT '',
+  `OriginTypeID` varchar(100) NOT NULL DEFAULT '',
+  `OriginTypeText` varchar(100) NOT NULL DEFAULT '',
+  `DateFilledUTC` varchar(100) NOT NULL DEFAULT '',
+  `ExpirationDate` varchar(100) NOT NULL DEFAULT '',
+  `DawCodeID` varchar(100) NOT NULL DEFAULT '',
+  `DawCodeText` varchar(100) NOT NULL DEFAULT '',
+  `DaysSupply` varchar(100) NOT NULL DEFAULT '',
+  `QuantityRemaining` varchar(100) NOT NULL DEFAULT '',
+  `NumberOfRefillsAllowed` varchar(100) NOT NULL DEFAULT '',
+  `NumberofRefillsFilled` varchar(100) NOT NULL DEFAULT '',
+  `RefillsRemaining` varchar(100) NOT NULL DEFAULT '',
+  `FutureFill` varchar(100) NOT NULL DEFAULT '',
+  `AllowPartialFills` varchar(100) NOT NULL DEFAULT '',
+  `PrimaryDiagnosisSequenceNumber` varchar(100) NOT NULL DEFAULT '',
+  `SecondaryDiagnosisSequenceNumber` varchar(100) NOT NULL DEFAULT '',
+  `TertiaryDiagnosisSequenceNumber` varchar(100) NOT NULL DEFAULT '',
+  `SigCode` varchar(100) NOT NULL DEFAULT '',
+  `DirectionsTranslatedEnglish` varchar(100) NOT NULL DEFAULT '',
+  `DirectionsTranslatedOtherLanguage` varchar(100) NOT NULL DEFAULT '',
+  `HOA` varchar(100) NOT NULL DEFAULT '',
+  `PriorityTypeID` varchar(100) NOT NULL DEFAULT '',
+  `PriorityTypeText` varchar(100) NOT NULL DEFAULT '',
+  `RxCommentsInformational` text NOT NULL,
+  `RxCommentsCritical` text NOT NULL,
+  `RxCommentsPointOfSale` text NOT NULL,
+  `FillCommentsInformational` text NOT NULL,
+  `FillCommentsCritical` text NOT NULL,
+  `FillCommentsPointOfSale` text NOT NULL,
+  `CompletedDate` varchar(100) NOT NULL DEFAULT '',
+  `TrackingNumber` varchar(100) NOT NULL DEFAULT '',
+  `PharmacistPioneerRxID` varchar(100) NOT NULL DEFAULT '',
+  `CheckedByPharmacistEmployeeID` varchar(100) NOT NULL DEFAULT '',
+  `ChangedOnUTC` varchar(100) NOT NULL DEFAULT '',
+  `RxTransactionStatusChangedOnDateTimeUTC` varchar(100) NOT NULL DEFAULT '',
+  `PreviousDateTimeFilled` varchar(100) NOT NULL DEFAULT '',
+  `CheckedByPharmacistPioneerRxID` varchar(100) NOT NULL DEFAULT '',
+  `RxStatusChangedOnDateTimeUTC` varchar(100) NOT NULL DEFAULT '',
+  `ExpirationDateUTC` varchar(100) NOT NULL DEFAULT '',
+  PRIMARY KEY (`rowid`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `pioneerevent.medicationprescribed` (
+  `rowid` int(10) NOT NULL AUTO_INCREMENT,
+  `datetriggered` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `MessageID` varchar(100) NOT NULL DEFAULT '',
+  `RxNumber` varchar(100) NOT NULL DEFAULT '',
+  `DrugStrength` varchar(100) NOT NULL DEFAULT '',
+  `NDC` varchar(100) NOT NULL DEFAULT '',
+  `UPC` varchar(100) NOT NULL DEFAULT '',
+  `GCN` varchar(100) NOT NULL DEFAULT '',
+  `PioneerRxItemID` varchar(100) NOT NULL DEFAULT '',
+  `DeaSchedule` varchar(100) NOT NULL DEFAULT '',
+  `Quantity` varchar(100) NOT NULL DEFAULT '',
+  `UnitText` varchar(100) NOT NULL DEFAULT '',
+  `LabelType` varchar(100) NOT NULL DEFAULT '',
+  `BrandName` varchar(100) NOT NULL DEFAULT '',
+  `WrittenName` varchar(100) NOT NULL DEFAULT '',
+  `GenericName` varchar(100) NOT NULL DEFAULT '',
+  PRIMARY KEY (`rowid`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `pioneerevent.medicationdispensed` (
+  `rowid` int(10) NOT NULL AUTO_INCREMENT,
+  `datetriggered` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `MessageID` varchar(100) NOT NULL DEFAULT '',
+  `RxNumber` varchar(100) NOT NULL DEFAULT '',
+  `DrugStrength` varchar(100) NOT NULL DEFAULT '',
+  `NDC` varchar(100) NOT NULL DEFAULT '',
+  `UPC` varchar(100) NOT NULL DEFAULT '',
+  `GCN` varchar(100) NOT NULL DEFAULT '',
+  `PioneerRxItemID` varchar(100) NOT NULL DEFAULT '',
+  `DeaSchedule` varchar(100) NOT NULL DEFAULT '',
+  `PartialFillDueDate` varchar(100) NOT NULL DEFAULT '',
+  `PartialFillSatisfiedDate` varchar(100) NOT NULL DEFAULT '',
+  `PartialFillSatisfiedByPersonID` varchar(100) NOT NULL DEFAULT '',
+  `PartialFillDispensedQuantity` varchar(100) NOT NULL DEFAULT '',
+  `PartialFillTotalDispensedQuantity` varchar(100) NOT NULL DEFAULT '',
+  `Quantity` varchar(100) NOT NULL DEFAULT '',
+  `UnitText` varchar(100) NOT NULL DEFAULT '',
+  `DaysSupply` varchar(100) NOT NULL DEFAULT '',
+  `LastFillDateTime` varchar(100) NOT NULL DEFAULT '',
+  `LabelType` varchar(100) NOT NULL DEFAULT '',
+  `BrandName` varchar(100) NOT NULL DEFAULT '',
+  `GenericName` varchar(100) NOT NULL DEFAULT '',
+  `DrugName` varchar(100) NOT NULL DEFAULT '',
+  `ImprintText` text NOT NULL,
+  `Manufacturer` varchar(100) NOT NULL DEFAULT '',
+  `LotNumber` varchar(100) NOT NULL DEFAULT '',
+  `LotExpirationDate` varchar(100) NOT NULL DEFAULT '',
+  `DispensedItemAlternateID` varchar(100) NOT NULL DEFAULT '',
+  `Group` varchar(100) NOT NULL DEFAULT '',
+  `SubstitutionText` varchar(100) NOT NULL DEFAULT '',
+  `DosageFormText` varchar(100) NOT NULL DEFAULT '',
+  `DrugClassID` varchar(100) NOT NULL DEFAULT '',
+  `DrugClassText` varchar(100) NOT NULL DEFAULT '',
+  PRIMARY KEY (`rowid`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `pioneerevent.claim` (
+  `rowid` int(10) NOT NULL AUTO_INCREMENT,
+  `datetriggered` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `MessageID` varchar(100) NOT NULL DEFAULT '',
+  `BillingOrder` varchar(20) NOT NULL DEFAULT '',
+  `Type` varchar(100) NOT NULL DEFAULT '',
+  `CardholderID` varchar(100) NOT NULL DEFAULT '',
+  `PayorName` varchar(100) NOT NULL DEFAULT '',
+  `TransmissionDate` varchar(100) NOT NULL DEFAULT '',
+  `ClaimEdiSent` text NOT NULL,
+  `ClaimEdiReceived` text NOT NULL,
+  `BinNumber` varchar(100) NOT NULL DEFAULT '',
+  `PCN` varchar(100) NOT NULL DEFAULT '',
+  `TransactionResponseStatus` varchar(20) NOT NULL DEFAULT '',
+  `TransactionCode` varchar(20) NOT NULL DEFAULT '',
+  `PriorAuthorizationNumberSubmitted` varchar(20) NOT NULL DEFAULT '',
+  `AquisitionCost` varchar(20) NOT NULL DEFAULT '',
+  `GrossAmountSubmitted` varchar(20) NOT NULL DEFAULT '',
+  `GrossAmountPaid` varchar(20) NOT NULL DEFAULT '',
+  `PatientPayAmountPaid` varchar(20) NOT NULL DEFAULT '',
+  `PercentageSalesTaxAmountPaid` varchar(20) NOT NULL DEFAULT '',
+  `PercentageSalesTaxAmountSubmitted` varchar(20) NOT NULL DEFAULT '',
+  `PercentageSalesTaxRatePaid` varchar(20) NOT NULL DEFAULT '',
+  `PercentageSalesTaxRateSubmitted` varchar(20) NOT NULL DEFAULT '',
+  `FlatSalesTaxAmountPaid` varchar(20) NOT NULL DEFAULT '',
+  `FlatSalesTaxAmountSubmitted` varchar(20) NOT NULL DEFAULT '',
+  `UsualAndCustomaryFeeSubmitted` varchar(20) NOT NULL DEFAULT '',
+  PRIMARY KEY (`rowid`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+
+alter table `pioneerevent.claim` add `RxNumber` varchar(100) NOT NULL DEFAULT '';
+
+UPDATE
+   `pioneerevent.claim` t1,
+    `pioneerevent.rx` t2
+SET
+    t1.RxNumber = t2.RxNumber
+ where
+    t1.MessageID=t2.MessageID;
+
+################# End Pioneer Event Tables Created ################# added by shalini  @ 20-11-2017
+
+truncate table `pioneerevent.claim`;
+truncate table `pioneerevent.medicationdispensed`;
+truncate table `pioneerevent.medicationprescribed`;
+truncate table `pioneerevent.messageheader`;
+truncate table `pioneerevent.patient`;
+truncate table `pioneerevent.patientaddress`;
+truncate table `pioneerevent.patientphonenumber`;
+truncate table `pioneerevent.prescriber`;
+truncate table `pioneerevent.prescriberaddress`;
+truncate table `pioneerevent.prescriberphonenumber`;
+truncate table `pioneerevent.rx`;
+
+
+################# Frequently User Pioneer Tables ################# added by shalini  @ 23-12-2017 #################
+LOAD DATA local INFILE 'c:\\pioneerdata\\pioneer.item.deaoverride.csv' INTO TABLE `pioneer.item.deaoverride` FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n'
+LOAD DATA local INFILE 'c:\\pioneerdata\\pioneer.item.item.csv' INTO TABLE `pioneer.item.item` FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n'
+LOAD DATA local INFILE 'c:\\pioneerdata\\pioneer.diagnosis.icd10.csv' INTO TABLE `pioneer.diagnosis.icd10` FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n'
+LOAD DATA local INFILE 'c:\\pioneerdata\\pioneer.prescription.sig.csv' INTO TABLE `pioneer.prescription.sig` FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n'
+LOAD DATA local INFILE 'c:\\pioneerdata\\pioneer.fdb.medmedication.csv' INTO TABLE `pioneer.fdb.medmedication` FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n'
+
+
+truncate table `pioneer.item.deaoverride`;
+truncate table `pioneer.item.item`;
+truncate table `pioneer.diagnosis.icd10`;
+truncate table `pioneer.prescription.sig`;
+truncate table `pioneer.fdb.medmedication`;
+
+  ############update script  prescription_transaction  table by shalini @ Mar 8,2021  
+alter table `pioneer.item.item` add  `ConcurrencyDatabaseNumber` timestamp NULL DEFAULT NULL;
+alter table `pioneer.item.item` add  `ItemUseTypeID` int(10) DEFAULT NULL;
